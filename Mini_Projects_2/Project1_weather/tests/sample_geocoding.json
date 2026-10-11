@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "id": 2935022,
+      "name": "Dresden",
+      "latitude": 51.05089,
+      "longitude": 13.73832,
+      "elevation": 116.0,
+      "feature_code": "PPLA",
+      "country_code": "DE",
+      "admin1_id": 2842566,
+      "admin3_id": 2935020,
+      "admin4_id": 6551127,
+      "timezone": "Europe/Berlin",
+      "population": 556227,
+      "country_id": 2921044,
+      "country": "Germany",
+      "admin1": "Saxony",
+      "admin3": "Kreisfreie Stadt Dresden",
+      "admin4": "Dresden"
+    }
+  ],
+  "generationtime_ms": 0.32949448
+}
