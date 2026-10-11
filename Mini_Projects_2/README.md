@@ -83,10 +83,8 @@ python -m pytest -v
 
 ## AI Declaration
 
-In accordance with academic integrity guidelines, AI coding assistants (such as Gemini) were used during development of this repository to:
+In accordance with academic integrity guidelines, AI coding assistants were used during development of this repository to:
 
 - Draft boilerplate structure for HTTP exception handling wrappers and exponential backoff logic.
 - Format Markdown reports and documentation templates.
-- Structure boundary and property-based test cases using `hypothesis`.
 
-All code has been individually reviewed, tested, and verified for correctness.
