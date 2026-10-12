@@ -1,11 +1,12 @@
 Getting Started & Environment Setup
-1. PrerequisitesEnsure Python 3.10+ is installed on your machine.
+1. Prerequisites
+Ensure Python 3.10+ is installed on your machine.
 
 2. Clone the Repository
 
 ```
 Bash 
-git clone [https://github.com/your-username/mscs-oop-assignment1.git](https://github.com/your-username/mscs-oop-assignment1.git)
+git clone https://github.com/alninja/MSDS_projects/tree/b96cdce2d2b1141e6d87ecce7108c2c2520aca4a/project_1 (https://github.com/your-username/mscs-oop-assignment1.git)
 cd mscs-oop-assignment1
 ```
 
@@ -57,29 +58,41 @@ jupyter notebook
 Navigate to the notebooks/ directory and open any project notebook (e.g., project1_population.ipynb). All notebooks use fixed random seeds (np.random.default_rng(seed)) and are designed to run top-to-bottom without errors via Kernel -> Restart & Run All.   
 
 Summary of Findings & Key Results
-Mini-Project 1: UBOS District Population Forecaster
-Wakiso exhibited the highest Compound Annual Growth Rate ($\text{CAGR} \approx 6.47\%$), requiring over 130 additional primary classrooms by 2029. 
+# Mini-Project 1: UBOS District Population Forecaster
 
-Model Critique: The Fibonacci-ratio model assumes population growth scales towards the Golden Ratio multiplier ($\phi \approx 1.618$, or a 61.8% annual growth rate). This exponential acceleration is biologically and socioeconomically unrealistic for demographic forecasting.   
+- **Growth Leader:** Wakiso district recorded the highest annual growth rate ($\text{CAGR} \approx 6.47\%$), meaning it will need over 130 new primary classrooms by 2029.
+- **Model Critique:** The Fibonacci-ratio model assumes an explosive annual growth rate of 61.8% ($\phi \approx 1.618$). This is unrealistic for long-term population planning because real human growth is bounded by resource limits and carrying capacity.
 
-Mini-Project 2: Solar Micro-Grid Dispatch Planner
-The 2x2 demand matrix is well-conditioned ($\kappa \approx 7.02$), ensuring stable numeric dispatch solutions.   
-Vectorised matrix solving using scipy.linalg.solve outperformed iterative Python loops by order-of-magnitude execution speeds.   
-Battery generation demonstrated higher variance than solar generation due to absorbing critical night load swings, heavily driving operating expenses due to higher per-kWh costs (UGX 450/kWh vs UGX 150/kWh).   
+---
 
-Mini-Project 3: Lake Victoria Fish Stock & Export Risk Model
-Discrete logistic growth modeling confirmed that harvest rates above $h = 0.20$ risk stock collapse, whereas $h = 0.10$ yields sustainable harvests near carrying capacity ($K = 10,000$ tonnes).   
-Evaluating risk via raw variance is invalid due to squared unit dimensions ($\text{UGX}^2$). Using the dimensionless Coefficient of Variation (CV) allowed objective risk classification.   
-Enforcing an 8-week annual closed season allowed biomass recovery, producing higher net 5-year revenues compared to continuous over-harvesting.   
+# Mini-Project 2: Solar Micro-Grid Dispatch Planner
+
+- **System Stability:** The micro-grid demand matrix is well-conditioned ($\kappa \approx 7.02$), so small changes in daily load do not cause large errors in energy calculations.
+- **Performance:** Vectorized matrix solving (`scipy.linalg.solve`) was significantly faster than iterative Python loops.
+- **Cost Drivers:** Battery power had much higher variance than solar because it absorbs critical night load swings. Batteries cost three times more per kWh than solar (UGX 450 vs. UGX 150), so peak night demand heavily drives up operational expenses.
+
+---
+
+# Mini-Project 3: Lake Victoria Fish Stock & Export Risk Model
+
+- **Harvest Sustainability:** Discrete logistic modelling showed that keeping the harvest rate near $h = 0.10$ maintains stable fish stocks close to carrying capacity (10,000 tonnes), whereas rates above $h = 0.20$ risk population collapse.
+- **Risk Metrics:** Raw variance is not useful for measuring revenue risk because its units are squared ($\text{UGX}^2$). The Coefficient of Variation (CV) provided a reliable, scale-free measure of risk.
+- **Closed Seasons:** Enforcing an 8-week annual fishing ban allows the fish population to recover, generating higher cumulative revenue over a 5-year period than continuous over-harvesting.
+
+---
 
 # Mini-Project 4: Rainfall Pattern & Crop Suitability Analyser
-Automatic peak detection identified unimodal rainfall regimes in Gulu and bimodal regimes in Kampala/Mbarara.   
-Correcting vector cosine similarity demonstrated that while Gulu and Kampala share similar seasonal timing (high cosine similarity), their volumetric rainfall differs drastically (large Euclidean distance).   
+
+- **Climate Regimes:** Automatic peak detection correctly identified a unimodal rainfall pattern in Gulu and bimodal patterns in Kampala and Mbarara.
+- **Similarity Pitfall:** Comparing regions using cosine similarity alone can be misleading. Gulu and Kampala have similar seasonal rainfall timing (high cosine similarity), but their actual water volumes differ drastically (large Euclidean distance). Extension officers must look at total volume, not just timing, when advising farmers.
+
+---
 
 # Mini-Project 5: Taxi Route Revenue, Pricing & Fleet Planner
-Supply-demand system solving established that Ntinda's current UGX 2,000 fare is below the UGX 2,200 market equilibrium, causing peak-hour seat shortages.   
-Simple Exponential Smoothing (SES) outperformed simple moving averages on short 10-day time horizons.   
-On 60-day simulated periodic data, a 7-Day Seasonal-Naïve model reduced forecast error significantly compared to moving averages by preserving day-of-week demand spikes.   
+
+- **Equilibrium Pricing:** Solving the supply-demand system for the Ntinda route showed that the current UGX 2,000 fare is below the market equilibrium of UGX 2,200, which causes rush-hour passenger seat shortages.
+- **Forecasting:** Simple Exponential Smoothing (SES) and Linear Trend models outperformed 3-day moving averages on short 10-day histories.
+- **Seasonal Demand:** Over a 60-day simulation with weekly patterns (busier Fridays, quieter Sundays), a 7-day Seasonal-Naïve forecaster beat standard moving averages by capturing weekend and weekday demand swings.   
 
 AI Assistance Declaration
 In accordance with course guidelines, AI coding tools (e.g., ChatGPT / Claude / Gemini) were utilized during this project:   
